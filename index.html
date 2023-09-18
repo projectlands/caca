@@ -7,18 +7,18 @@
     <title>Undangan Resepsi Pernikahan Made & Ami</title>
     <meta name="title" content="Undangan Resepsi Pernikahan Made & Ami">
     <meta name="description" content="Website Undangan Resepsi Pernikahan Made & Ami Secara Online">
-    <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/love emot.png">
     <meta name="theme-color" content="#212529">
     <meta name="color-scheme" content="dark">
     <meta property="og:title" content="Undangan Resepsi Pernikahan Made & Ami">
     <meta property="og:description" content="Website Undangan Resepsi Pernikahan Made & Ami Secara Online">
-    <!-- <meta property="og:image" content="https://ulems.my.id/assets/images/bg.jpeg"> -->
+    <meta property="og:image" content="./assets/images/cover.jpg">
     <meta property="og:image:type" content="image/jpeg">
-    <!-- <meta property="og:image:alt" content="https://ulems.my.id/"> -->
+    <meta property="og:image:alt" content="https://projectlands.github.io/MadeDanAmi/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="id_ID">
     <meta property="og:site_name" content="Undangan">
-    <!-- <meta property="og:url" content="https://ulems.my.id/"> -->
+    <meta property="og:url" content="https://projectlands.github.io/MadeDanAmi/">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
     <!-- <link rel="preconnect" href="https://api.ulems.my.id" crossorigin="anonymous"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
@@ -204,11 +204,11 @@
                     </div>
 
                     <div class="py-2" data-aos="fade-up" data-aos-duration="1500">
-                        <a href="https://goo.gl/maps/ALZR6FJZU3kxVwN86" target="_blank" class="btn btn-outline-light btn-sm rounded-pill shadow-sm mb-2 px-3">
+                        <a href="https://maps.app.goo.gl/YmF82MUDis3GDGFT8" target="_blank" class="btn btn-outline-light btn-sm rounded-pill shadow-sm mb-2 px-3">
                             <i class="fa-solid fa-map-location-dot me-2"></i>Lihat Google Maps
                         </a>
                         <p class="mb-0 mt-1 mx-1 pb-4" style="font-size: 0.9rem;">
-                            RT 10 RW 02, Desa Pajerukan, Kec. Kalibagor, Kab. Banyumas, Jawa Tengah 53191
+                            Jl. Pulau Batam Gang Bangau No 3 , Banyuning, Singaraja Kab. Buleleng. Bali
                         </p>
                     </div>
                 </div>
@@ -295,7 +295,7 @@
                         </div>
                         <div class="col-lg-3 col-md-4 col-6 p-2">
                             <a href="assets/images/cwok.jpg" data-src="assets/images/cwok.jpg" data-abc="true" class="img-item img-fluid">
-                                <img alt="img1" src="assets/images/cwok.jpg" class="img-fluid img-thumbnail"/>
+                                <img alt="img1" src="assets/images/cwok.jpg"  class="img-fluid img-thumbnail"/>
                             </a>
                         </div>
                         
@@ -320,57 +320,54 @@
             <div class="container">
                 <div class="card-body border rounded-4 shadow p-3">
                     <h1 class="font-estetik text-center mb-3" style="font-size: 3rem;">Ucapan & Doa</h1>
-                    <input type="hidden" id="idbalasan">
-                    <div class="mb-1" id="balasan"></div>
+                   <form name="submit-to-google-sheet">
                     <div class="mb-3">
                         <label for="formnama" class="form-label">Nama</label>
-                        <input type="text" class="form-control shadow-sm" id="formnama" placeholder="Isikan Nama Anda">
+                        <input type="text" class="form-control shadow-sm" id="formnama" name="Nama" placeholder="Isikan Nama Anda" required>
                     </div>
                     <div class="mb-3">
                         <label for="hadiran" class="form-label" id="labelhadir">Kehadiran</label>
-                        <select class="form-select shadow-sm" aria-label="selectkehadiran" id="hadiran">
-                            <option value="0" selected>Konfirmasi Kehadiran</option>
-                            <option value="1">Hadir</option>
-                            <option value="2">Berhalangan</option>
+                        <select class="form-select shadow-sm" aria-label="selectkehadiran" id="hadiran" name="Kehadiran" required>
+                            <option value="" selected>Konfirmasi Kehadiran</option>
+                            <option value="Hadir">Hadir</option>
+                            <option value="Ragu">Ragu</option>
+                            <option value="Berhalangan">Berhalangan</option>
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="formpesan" class="form-label">Ucapan & Doa</label>
-                        <textarea class="form-control shadow-sm" id="formpesan" rows="4" placeholder="Tulis Ucapan & Doa"></textarea>
+                        <textarea class="form-control shadow-sm" id="formpesan" name="Ucapan" rows="4" placeholder="Tulis Ucapan & Doa" required></textarea>
                     </div>
+                    <div class="d-grid mb-2">
+                        <button class="btn btn-primary btn-sm rounded-4 shadow btn-kirim" type="submit" id="kirim">
+                            Kirim<i class="fa-solid fa-paper-plane ms-1"></i>
+                        </button>
+                        <button class="btn btn-primary btn-sm rounded-4 shadow btn-loading disabled d-none" disabled >
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> mengirim...
+                        </button>
+                        
+                    </div>
+                    </form>
                     <div class="d-flex">
                         <button class="flex-fill btn btn-danger btn-sm rounded-4 shadow m-1" style="display: none;" onclick="resetForm()" id="batal">
                             Batal<i class="fa-solid fa-xmark ms-1"></i>
                         </button>
-                        <button class="flex-fill btn btn-primary btn-sm rounded-4 shadow m-1" style="display: none;" onclick="kirimBalasan()" id="kirimbalasan">
-                            Kirim<i class="fa-solid fa-paper-plane ms-1"></i>
-                        </button>
-                    </div>
-                    <div class="d-grid mb-2">
-                        <button class="btn btn-primary btn-sm rounded-4 shadow" onclick="kirim()" id="kirim">
-                            Kirim<i class="fa-solid fa-paper-plane ms-1"></i>
-                        </button>
                     </div>
                 </div>
 
-                <div class="rounded-4 mt-4 mb-2">
+                
+                <div class="rounded-4 mt-4 mb-2" style="max-height: 500px; overflow-y: auto;">
+
+                    <div class="text-center d-none loadlistucapan">
+                        <div class="spinner-border" role="status">
+                          <span class="visually-hidden">Loading...</span>
+                        </div>
+                      </div>
                     <div id="daftarucapan" class="bwrapper-default"></div>
                 </div>
+                
 
-                <nav class="d-flex justify-content-center">
-                    <ul class="pagination mb-0">
-                        <li class="page-item disabled" id="previous">
-                            <button class="page-link" onclick="pagination.previous(this)" aria-label="Previous">
-                                <i class="fa-solid fa-circle-left me-1"></i>Sebelumnya
-                            </button>
-                        </li>
-                        <li class="page-item" id="next">
-                            <button class="page-link" onclick="pagination.next(this)" aria-label="Next">
-                                Selanjutnya<i class="fa-solid fa-circle-right ms-1"></i>
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
+                
             </div>
         </section>
 
@@ -405,7 +402,7 @@
         </div>
     </main>
 
-    <button type="button" id="tombol-musik" style="display: none;" class="btn btn-light btn-sm rounded-circle btn-music" onclick="play(this)" data-status="true" data-url="assets/music/sound.mp3">
+    <button type="button" id="tombol-musik" style="display: none;" class="btn btn-light btn-sm rounded-circle btn-music" onclick="play(this)" data-status="true" data-url="assets/music/Elvis Presley - Can't Help Falling In Love With You (Saxophone Cover by Alexandra).mp3">
         <i class="fa-solid fa-circle-pause"></i>
     </button>
 
@@ -457,6 +454,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha256-qlPVgvl+tZTCpcxYJFdHB/m6mDe84wRr+l81VoYPTgQ=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" integrity="sha256-pQBbLkFHcP1cy0C8IhoSdxlm0CtcH5yJ2ki9jjgR03c=" crossorigin="anonymous"></script>
+    <script src="./js/jquery.min.js"></script>
 
   <!-- Sertakan Lightgallery JS dari CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
