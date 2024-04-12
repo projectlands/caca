@@ -50,8 +50,28 @@ const salin = (btn, msg = null) => {
     }, 1500);
 };
 
+let waktu = (new URLSearchParams(window.location.search)).get('sesi') ?? '';
+if (waktu == 1) {
+  // document.querySelector('.waktu').innerHTML = `<span> Pukul ${escapeHtml(waktu)}</span>`
+  document.querySelector('.waktu').innerHTML = `<span> Pukul : 16.00 wita - 19.00 wita </span>`
+  document.querySelector('.tgl').innerHTML = `Kamis, 18 April 2024`
+  
+  //   let tampilanWaktuElem = document.getElementById('tampilan-waktu')
+} else {
+    document.querySelector('.waktu').innerHTML = `<span> Pukul : 08.00 wita - 13.00 wita </span>` 
+    document.querySelector('.tgl').innerHTML = `Jumat, 19 April 2024`
+    
+}
+
 const timer = () => {
-    let countDownDate = (new Date(document.getElementById('tampilan-waktu').getAttribute('data-waktu').replace(' ', 'T'))).getTime();
+    let waktu = (new URLSearchParams(window.location.search)).get('sesi') ?? '';
+    if (waktu == 1) {
+        var nilaiDataWaktu = '2024-04-18 16:00:00'
+    } else {
+        var nilaiDataWaktu = '2024-04-19 08:00:00'
+    }
+    let countDownDate = (new Date(nilaiDataWaktu.replace(' ', 'T'))).getTime();
+    // let countDownDate = (new Date(document.getElementById('tampilan-waktu').getAttribute('data-waktu').replace(' ', 'T'))).getTime();
     let time = null;
     let distance = null;
 

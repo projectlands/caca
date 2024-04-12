@@ -7,8 +7,8 @@ const setting = {
 }
 
 
-let waktu = (new URLSearchParams(window.location.search)).get('sesi') ?? '';
-document.querySelector('.waktu').innerHTML = `<span> Pukul ${escapeHtml(waktu)}</span>`
+
+
 
 
 function formatTimeAgo(timestamp) {
