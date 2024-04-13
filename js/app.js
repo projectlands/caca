@@ -55,11 +55,15 @@ if (waktu == 1) {
   // document.querySelector('.waktu').innerHTML = `<span> Pukul ${escapeHtml(waktu)}</span>`
   document.querySelector('.waktu').innerHTML = `<span> Pukul : 16.00 wita - 19.00 wita </span>`
   document.querySelector('.tgl').innerHTML = `Kamis, 18 April 2024`
+  document.querySelector('.alamat').innerHTML = `Br. Dinas Auman Dajan Sema, Desa Mundeh, Kec. Selemadeg Barat, Kab. Tabanan`
+  document.querySelector('.gmap').href = 'https://maps.app.goo.gl/4J1swQLJuNagpJJG6'
   
   //   let tampilanWaktuElem = document.getElementById('tampilan-waktu')
 } else {
     document.querySelector('.waktu').innerHTML = `<span> Pukul : 08.00 wita - 13.00 wita </span>` 
     document.querySelector('.tgl').innerHTML = `Jumat, 19 April 2024`
+    document.querySelector('.alamat').innerHTML = `Jl. Pulau Batam No. 15 Singaraja, Desa Banyuning, Kec. Buleleng, Kab. Buleleng`
+    document.querySelector('.gmap').href = 'https://maps.app.goo.gl/FeisNzTuXZ4PPUMb8'
     
 }
 
