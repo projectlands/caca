@@ -53,26 +53,26 @@ const salin = (btn, msg = null) => {
 let waktu = (new URLSearchParams(window.location.search)).get('sesi') ?? '';
 if (waktu == 1) {
   // document.querySelector('.waktu').innerHTML = `<span> Pukul ${escapeHtml(waktu)}</span>`
-  document.querySelector('.waktu').innerHTML = `<span> Pukul : 16.00 wita - 19.00 wita </span>`
-  document.querySelector('.tgl').innerHTML = `Kamis, 18 April 2024`
-  document.querySelector('.alamat').innerHTML = `Br. Dinas Auman Dajan Sema, Desa Mundeh, Kec. Selemadeg Barat, Kab. Tabanan`
-  document.querySelector('.gmap').href = 'https://maps.app.goo.gl/4J1swQLJuNagpJJG6'
+  document.querySelector('.waktu').innerHTML = `<span> Pukul : 12.00 wita - Selesai </span>`
+  document.querySelector('.tgl').innerHTML = `Sabtu, 16 November 2024`
+  document.querySelector('.alamat').innerHTML = `Jl. Gunung Batur Gang IX Nomor 4 kelurahan Paket Agung Buleleng`
+  document.querySelector('.gmap').href = 'https://maps.app.goo.gl/Bk6RtSpg8J9y3rwC8'
   
   //   let tampilanWaktuElem = document.getElementById('tampilan-waktu')
 } else {
-    document.querySelector('.waktu').innerHTML = `<span> Pukul : 08.00 wita - 13.00 wita </span>` 
-    document.querySelector('.tgl').innerHTML = `Jumat, 19 April 2024`
-    document.querySelector('.alamat').innerHTML = `Jl. Pulau Batam No. 15 Singaraja, Desa Banyuning, Kec. Buleleng, Kab. Buleleng`
-    document.querySelector('.gmap').href = 'https://maps.app.goo.gl/FeisNzTuXZ4PPUMb8'
+    document.querySelector('.waktu').innerHTML = `<span> Pukul : 12.00 wita - Selesai </span>` 
+    document.querySelector('.tgl').innerHTML = `Sabtu, 16 November 2024`
+    document.querySelector('.alamat').innerHTML = `Jl. Gunung Batur Gang IX Nomor 4 kelurahan Paket Agung Buleleng`
+    document.querySelector('.gmap').href = 'https://maps.app.goo.gl/Bk6RtSpg8J9y3rwC8'
     
 }
 
 const timer = () => {
     let waktu = (new URLSearchParams(window.location.search)).get('sesi') ?? '';
     if (waktu == 1) {
-        var nilaiDataWaktu = '2024-04-18 16:00:00'
+        var nilaiDataWaktu = '2024-11-16 12:00:00'
     } else {
-        var nilaiDataWaktu = '2024-04-19 08:00:00'
+        var nilaiDataWaktu = '2024-11-16 12:00:00'
     }
     let countDownDate = (new Date(nilaiDataWaktu.replace(' ', 'T'))).getTime();
     // let countDownDate = (new Date(document.getElementById('tampilan-waktu').getAttribute('data-waktu').replace(' ', 'T'))).getTime();
